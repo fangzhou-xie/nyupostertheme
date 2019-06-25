@@ -1,0 +1,544 @@
+% Gemini theme
+% https://github.com/anishathalye/gemini
+
+\documentclass[final, notheorems]{beamer}
+
+% ====================
+% Packages
+% ====================
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[size=custom,width=48in,height=36,scale=1.24]{beamerposter}
+\usetheme{gemini}
+\usecolortheme{nyu}
+\usepackage{graphicx}
+% \graphicspath{
+%     {../mec/},
+% }
+\usepackage{subfig}
+
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,matrix}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+% \usepackage[noend]{algpseudocode}
+% with noend option, no ``end'' after loop
+% \usepackage{algpseudocode}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+% \usepackage{dsfont}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+
+\usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+% \usepackage{bibentry}
+% \setbeamertemplate{bibliography entry title}{}
+% \setbeamertemplate{bibliography entry location}{}
+% \setbeamertemplate{bibliography entry note}{}
+% ====================
+% Lengths
+% ====================
+
+% If you have N columns, choose \sepwidth and \colwidth such that
+% (N+1)*\sepwidth + N*\colwidth = \paperwidth
+% \newlength{\sepwidth}
+% \newlength{\colwidth}
+% \setlength{\sepwidth}{0.025\paperwidth}
+% \setlength{\colwidth}{0.3\paperwidth}
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\paperwidth}{48in}
+\setlength{\paperheight}{36in}
+\setlength{\sepwid}{0.024\paperwidth}
+\setlength{\onecolwid}{0.22\paperwidth}
+\setlength{\twocolwid}{0.464\paperwidth}
+\setlength{\threecolwid}{0.708\paperwidth}
+\setlength{\topmargin}{-0.5in}
+
+% \newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+\definecolor{pyblue}{RGB}{31, 119, 180}
+\definecolor{pygreen}{RGB}{44, 159, 44}
+\definecolor{pyred}{RGB}{213, 36, 36}
+\definecolor{pyorange}{RGB}{254, 127, 15}
+
+\definecolor{pypink}{RGB}{227, 118, 193}
+\definecolor{pycyan}{RGB}{25, 190, 207}
+\definecolor{pybrown}{RGB}{140, 86, 75}
+
+\definecolor{nyupurple}{RGB}{87, 6, 140}
+
+\renewcommand{\indent}{\hspace*{2em}}
+\pgfplotsset{compat=1.16}
+
+% \makeatletter
+% \setbeamertemplate{theorem begin}
+% {%
+%   \inserttheoremheadfont% \bfseries
+%   \inserttheoremname \inserttheoremnumber
+%   \ifx\inserttheoremaddition\@empty\else\ (\inserttheoremaddition)\fi%
+%   \inserttheorempunctuation
+%   \normalfont
+% }
+% \setbeamertemplate{theorem end}{%
+%   % empty
+% }
+% \makeatother
+% \newtheorem{definition}{Definition}
+
+% ====================
+% Title
+% ====================
+
+\title{Automatic Generation of Sentiment Index:\\
+Wasserstein Index Generation Model and Education Inequality Sentiment Index}
+
+\author{Fangzhou Xie}
+
+\institute[NYU]{Department of Economics, New York University}
+
+% ====================
+% Body
+% ====================
+
+\begin{document}
+
+% ------------------------ add institute logo
+% \addtobeamertemplate{headline}{}
+% {
+% 	\begin{tikzpicture}[remember picture, overlay]
+% 		\node [shift={(-17.2, -12.4)}] at (current page.north east)
+% 		{\includegraphics[width=6in]{nyu_long_color.png}};
+% 		% \node [shift={(-16.7, -15)}] at (current page.north east)
+% 		% {\href{fangzhou.xie@nyu.edu}{\tt fangzhou.xie@nyu.edu}};
+% 	\end{tikzpicture}
+% }
+
+\begin{frame}[t]
+	\begin{columns}[t]
+		\begin{column}{\sepwid}\end{column}			% empty spacer column
+		\begin{column}{\onecolwid}
+			\begin{alertblock}{The Main Question}
+				How to generate a time-series sentiment index from texts that are
+				associated with timestamps, in a fast and easy way?
+				What happens if we track public sentiment towards education inequality
+				throughout time?
+			\end{alertblock}
+			% \end{column}
+		\end{column}
+
+		\begin{column}{\sepwid}\end{column}			% empty spacer column
+		\begin{column}{\onecolwid}
+			\begin{alertblock}{The Main Question}
+				How to generate a time-series sentiment index from texts that are
+				associated with timestamps, in a fast and easy way?
+				What happens if we track public sentiment towards education inequality
+				throughout time?
+			\end{alertblock}
+			% \end{column}
+		\end{column}
+
+		\begin{column}{\sepwid}\end{column}			% empty spacer column
+		\begin{column}{\onecolwid}
+			\begin{alertblock}{The Main Question}
+				How to generate a time-series sentiment index from texts that are
+				associated with timestamps, in a fast and easy way?
+				What happens if we track public sentiment towards education inequality
+				throughout time?
+			\end{alertblock}
+			% \end{column}
+		\end{column}
+
+		\begin{column}{\sepwid}\end{column}			% empty spacer column
+		\begin{column}{\onecolwid}
+			\begin{alertblock}{The Main Question}
+				How to generate a time-series sentiment index from texts that are
+				associated with timestamps, in a fast and easy way?
+				What happens if we track public sentiment towards education inequality
+				throughout time?
+			\end{alertblock}
+			% \end{column}
+		\end{column}
+
+	\end{columns}
+\end{frame}
+
+% \begin{frame}[t]
+% 	\begin{columns}[t]	% the [t] option aligns the column's content at the top
+% 		\begin{column}{\sepwid}\end{column}			% empty spacer column
+%
+% 		\begin{column}{\onecolwid}
+% 			\begin{alertblock}{The Main Question}
+% 				How to generate a time-series sentiment index from texts that are
+% 				associated with timestamps, in a fast and easy way?
+% 				What happens if we track public sentiment towards education inequality
+% 				throughout time?
+% 			\end{alertblock}
+% 			% \begin{block}{Abstract}
+% 			% 	% \cite{galichon2016} calls
+% 			% 	% \cite{villani2003}
+% 			% 	\cite{cuturi2013}
+% 			% \end{block}
+% 			% \begin{block}{Mathematical Notations}
+% 			% 	lueluelue
+% 			% \end{block}
+%
+% 			\begin{block}{The Model}
+% 				Consider a corpus with \(M\) documents with a vocabulary of \(N\) tokens.
+% 				The document matrix \(Y=\left[y_{m}\right] \in \mathbb{R}^{N \times M}\),
+% 				where \(m \in\{1, \dots, M\}\), and each \(y_{m} \in \Sigma^{N}\).
+% 				Our aim is to represent and reconstruct these documents by some
+% 				topics \(T \in \mathbb{R}^{N \times K}\), with associated weights
+% 				\(\Lambda \in \mathbb{R}^{K \times M}\).
+% 				Cost matrix is obtained by calculating distances between
+% 				word embeddings \(d_{x_i x_j} = d(x_i, x_j)\), where
+% 				\(x \in \mathbb{R}^{N \times D}\)	and \(D\) is the
+% 				embedding depth.% \cite{mikolov2013}.\\
+% 				% \( \)\\
+% 				%
+% 				% \begin{definition}[$p$-order Wasserstein Distance]
+% 				% 	Given \(p \in \left[1, \infty\right)\), the Wasserstein distance of
+% 				% 	order p is defined as:
+% 				% 	\begin{equation}
+% 				% 		W_{p}(\mu, \nu) :=\inf \left\{\int_{\Omega \times \Omega}|x-y|^{p}
+% 				% 		\mathrm{d} \pi : \pi \in \Pi(\mu, \nu)\right\}^{\frac{1}{p}}
+% 				% 		\label{def:wasserstein}
+% 				% 	\end{equation}
+% 				% 	where \(\mu, \nu \in \mathscr{P}(\Omega)\), \(\Omega \subset \mathbb{R}^{d}\),
+% 				% 	and each \(\pi \in \Pi(\mu, \nu)\) refers to a coupling of
+% 				% 	probabilities \(\mu\) and \(\nu\).
+% 				% \end{definition}
+%
+% 				\indent We could set up a minimization from sources
+% 				(documents as vocabulary distributions) to targets (topics also as
+% 				distributions), given in the form of Kantorovich problem,
+% 				% (Def.~\ref{def:Kantorovich}),
+% 				whose computation is problematic when dimension
+% 				is high; hence adding entropy-regularization
+% 				% (Def.~\ref{def:sinkhorn})
+% 				will be faster to compute \cite{cuturi2013}.
+%
+% 				\( \)\\
+% 				\begin{definition}[Discrete Kantorovich Problem]
+% 					Given \(\mu, \nu \in \mathscr{P}(\Omega)\),
+% 					\(\mathscr{P}(\Omega)\) as a Borel probability measure on \(\Omega\),
+% 					\(\Omega \subset \mathbb{R}^{d}\), and \(C\) as cost matrix,
+% 					\begin{equation}
+% 						\begin{split}
+% 							W_2^2(\mu, \nu; C) &:=  \min_{\pi \in \Pi(\mu, \nu)}
+% 							\langle\pi , C\rangle \\
+% 							s.t.\ \Pi(\mu, \nu) &:=\left\{\pi \in \mathbb{R}_{+}^{N
+% 								\times N}, \pi \mathds{1}_{N}=\mu, \pi^{\top}
+% 							\mathds{1}_{N}=\nu\right\}.
+% 						\end{split}
+% 						\label{def:Kantorovich}
+% 					\end{equation}
+% 				\end{definition}
+%
+% 				% \( \)\\
+% 				% Introducing entropy regularization \cite{cuturi2013}, we have
+% 				\( \)\\
+% 				\begin{definition}[Sinkhorn Distance]
+% 					Given \(\mu, \nu, \pi, C, \Pi\),
+% 					% as in  Definition (\ref{def:Kantorovich}),
+% 					\begin{equation}
+% 						\begin{split}
+% 							S_{\varepsilon} (\mu, \nu; C) &:=  \min_{\pi \in
+% 								\Pi(\mu, \nu)}  \langle\pi , C\rangle +~\varepsilon~ \mathcal{H}(\pi)  \\
+% 							s.t.\ \Pi(\mu, \nu) &:=\left\{\pi \in \mathbb{R}_{+}^{N
+% 								\times N}, \pi \mathds{1}_{N}=\mu, \pi^{\top}
+% 							\mathds{1}_{N}=\nu\right\},
+% 							% \sum_{i,j} \pi_{i,j} \log(\pi_{i,j})
+% 						\end{split}
+% 					\end{equation}
+% 					% where
+% 					% \(\mathcal{H}(\pi) := \sum_{i, j}
+% 					% \pi_{i, j}\left(\log \left(\pi_{i, j}\right)-1\right)\) and
+% 					where \(\mathcal{H}(\pi) := \langle\pi,\log(\pi)\rangle\) and
+% 					\(\varepsilon\) is Sinkhorn weight.\\
+% 					\label{def:sinkhorn}
+% 				\end{definition}
+%
+% 				\( \)\\
+% 				Thus, we could set up the loss function as in WDL \cite{schmitz2018},
+% 				\begin{equation}
+% 					\begin{split}
+% 						\min_{R, A} \sum_{m=1}^{M} \mathcal{L}\left(y_m, y_{S_{\varepsilon}}
+% 						\left(T(R), \lambda_m(A) ; C\right)\right)\\
+% 						t_{nk}(R) := \frac{e^{r_{nk}}}{\sum_{n'} e^{r_{n'k}}}, \quad
+% 						\lambda_{nk}(A) := \frac{e^{a_{km}}}{\sum_{k'} e^{a_{k'm}}},
+% 					\end{split}
+% 					\label{eq:unconstrainedloss}
+% 				\end{equation}
+% 				where the \textit{softmax} operation on \(R, A\) ensures \(T, \Lambda\) being
+% 				discrete distributions \cite{schmitz2018}.
+% 				Then, we use SGD to calculate \(\nabla \mathcal{L}\),
+% 				update \(R, A\), and produce \(T, \Lambda\).
+%
+% 				\indent Further, we could conduct ICA on \(T, \Lambda\) to generate
+% 				the time series index.
+% 				% \begin{equation}
+% 				% 	T \in \mathbb{R}^{N \times K} \xRightarrow{ICA}
+% 				% 	\hat T \in \mathbb{R}^{1 \times K} \xRightarrow{Multiply~\Lambda}
+% 				% 	\mathcal{I}.
+% 				% \end{equation}
+%
+% 				\begin{figure}[H]
+% 					\centering
+% 					% \resizebox{\onecolwid}{!}{%
+% 					\begin{tikzpicture}[scale=2.4, remember picture]
+% 						\node[anchor=east] (A) at (-2.5, 0)
+% 						{{$T \in \mathbb{R}^{N \times K}$}};
+% 						\node (B) at (0, 0) {{$\hat T \in \mathbb{R}^{1 \times K}$}};
+% 						\node (C) at (4.7, 0) {{$\mathscr{I} \in \mathbb{R}^{1 \times M}$}};
+% 						\draw[-latex',double, name=l, line width=1mm]
+% 						(A) -- (B) node[midway, anchor=south] {{$ICA$}};
+% 						\draw[-latex',double, name=k, line width=1mm]
+% 						(B) -- (C) node[midway, anchor=south]
+% 						{{$Multiply$}}
+% 						node[midway, anchor=north]
+% 						{{$\Lambda \in \mathbb{R}^{K \times M}$}};
+% 					\end{tikzpicture}
+% 					% }
+% 					\caption{Independent Component Analysis.}
+% 					\label{fig:ica}
+% 				\end{figure}
+% 			\end{block}
+% 		\end{column}
+%
+% 		\begin{column}{\sepwid}\end{column}			% empty spacer column
+% 		\begin{column}{\twocolwid}
+% 			% create a three-column-wide column and then we will split it up later
+% 			\begin{block}{Economic Policy Uncertainty Index (EPU)}
+% 				\begin{figure}
+% 					\centering
+% 					\subfloat[Time-series EPU generated by four methods.]{
+% 						\includegraphics[width=.95\onecolwid]{icaplot_epu_anno.png}
+% 					}
+% 					\hfill
+% 					\subfloat[Cumulated absolute differences.]{
+% 						\includegraphics[width=.95\onecolwid]{epudiffsum_ldaica.png}
+% 						% {epudiffsum_ldaica.png}
+% 					}
+% 					\caption{Original
+% 						\textcolor{pyblue}{EPU} \cite{baker2016},
+% 						compared with \textcolor{pyorange}{WIG},
+% 						\textcolor{pygreen}{LDA} \cite{azqueta-gavaldon2017, blei2003},
+% 						and \textcolor{pyred}{LDAICA}.}
+% 					\label{fig:epu}
+% 				\end{figure}
+% 			\end{block}
+% 			\begin{alertblock}{Interesting Finding}
+% 				\indent Throughout time, when people focus more on economic issues,
+% 				they care less about educational inequality.
+% 			\end{alertblock}
+%
+%
+% 			\begin{columns}[t,totalwidth=\twocolwid]
+% 				% split up that two-column-wide column
+% 				\begin{column}{\onecolwid}
+% 					\begin{block}{Methodology}
+% 						\begin{figure}[t]
+% 							\centering
+% 							% \includegraphics[width=5.59058824in]{methods.png}
+% 							\includegraphics[height=5.3in]{methods.png}
+% 							\label{fig:methods}
+% 							\caption{Procedures taken by different methods.}
+% 						\end{figure}
+% 					\end{block}
+%
+% 					\begin{block}{Dataset of Different Methods}
+% 						% \hspace*{20pt}
+% 						Dataset used by each method (given by source, number of entries,
+% 						number of tokens):
+% 						\begin{itemize}
+% 							% \hspace*{20pt}
+% 							\item EPU:
+% 							      \begin{itemize}
+% 								      \item{\makebox[2.2in][l]{Original EPU:}
+% 								            News articles, 12009 articles, N/A.}
+% 								      \item{\makebox[2.2in][l]{EPU by LDA:}
+% 								            News articles, 40454 articles, 1,000,000 tokens.}
+% 								      \item{\makebox[2.5in][l]{EPU by WIG:}
+% 								            \textcolor{red}{News headlines, 18532 titles, 11242 tokens.}}
+% 								      \item{\makebox[2.5in][l]{EPU by LDAICA:}
+% 								            \textcolor{red}{News headlines, 18532 titles, 11242 tokens.}}
+% 							      \end{itemize}
+% 							\item EIS:
+% 							      \begin{itemize}
+% 								      \item{\makebox[2.5in][l]{EIS by WIG:}
+% 								            \textcolor{red}{News headlines, 6414 titles, 6884 tokens.}}
+% 								      \item{\makebox[2.5in][l]{EIS by LDAICA:}
+% 								            \textcolor{red}{News headlines, 6414 titles, 6884 tokens.}}
+% 							      \end{itemize}
+% 						\end{itemize}
+% 					\end{block}
+% 				\end{column}
+%
+% 				\begin{column}{\onecolwid}
+% 					% \setbeamercolor{block title}{fg=red,bg=white}%frame color
+% 					% \setbeamercolor{block body}{fg=black,bg=white}%body color
+% 					% \begin{block}{Block Colours}
+% 					% \end{block}
+% 					\begin{block}{Education Inequality Sentiment Index (EIS)}
+% 						\begin{figure}[t]
+% 							\centering
+% 							\includegraphics[width=.8\onecolwid]{icaplot_eis.png}
+% 							\caption{Education Inequality Index, given by \textcolor{pyorange}{WIG} and
+% 								\textcolor{pyred}{LDAICA}.}
+% 							\label{fig:eis}
+% 						\end{figure}
+% 						The EIS index given by WIG is more informative than that produced by
+% 						LDAICA, as it fluctuates over time.
+% 					\end{block}
+%
+% 					\begin{block}{Word Frequencies of EIS Topics}
+% 						Take 10 most probable words of each year's 20 topics and count
+% 						the frequency. The most frequent 25 words are categorized into the
+% 						following 8 groups:
+%
+% 						\begin{center}
+% 							\begin{tabular}{llll}
+% 								% \hline
+% 								Ethnicity: & black (32), race (30), racial (22)                    \\
+% 								Gender:    & women (42)                                            \\
+% 								Change:    & new (40),         action (24), life (20)              \\
+% 								Economy:   & poverty (31),  poor (30),       economic (30),        \\
+% 								           & economy (25),     income (24)                         \\
+% 								Education: & school (84),     education (30),  students (25)       \\
+% 								Geography: & us (40), city (31),   world (26), africa (22)         \\
+% 								Politics:  & president (23), court (20)                            \\
+% 								Equality:  & inequality (30), rights (29), equality (23), gap (21)
+% 								% Other:      & get (26),         says (24),       nt (23).
+% 								% \hline
+% 							\end{tabular}
+% 						\end{center}
+% 					\end{block}
+% 				\end{column}
+% 			\end{columns}
+% 		\end{column}
+%
+% 		\begin{column}{\sepwid}\end{column}			% empty spacer column
+%
+% 		\begin{column}{\onecolwid}
+%
+% 			\begin{block}{Conclusions and Outlooks}
+% 				The combination of WDL and ICA provides us a direct and systematic way
+% 				to produce sentiment index, produces comparable results on a much smaller
+% 				dataset, and is more capable of detecting emotional spikes than LDA,
+% 				as is shown by comparing EPU indices (Fig.~\ref{fig:epu}).
+%
+% 				% \indent Interestingly, EIS shows counter-cyclical behavior against EPU's,
+% 				% which may suggest that when people focus more on economic issues,
+% 				% they care less about educational inequality.
+% 				\indent As discussed above, the EIS index shows counter-cyclical behavior
+% 				against EPU's. Meanwhile, according to the word frequency, it also
+% 				portrays a central population associated with education inequality --
+% 				that is, ``black'' ``women'' who live in ``poverty.''
+% 				Furthermore, the model suggests spaces of social change by highlighting
+% 				words such as ``action,'' ``mobility,'' and ``revolution.''
+% 				% provides an
+% 				% approach of statistically grasping the image of the ``mediascape''
+% 				% \cite{appadurai1990} -- it portrays
+%
+% 				\begin{figure}[t]
+% 					\centering
+% 					\includegraphics[width=.9\onecolwid]{eisepu3_1985_2.png}
+% 					\caption{\textcolor{pybrown}{EIS} compared with
+% 						\textcolor{pypink}{EPU (original)} and
+% 						\textcolor{pycyan}{EPU (WIG)}.}
+% 					% Education Inequality Index, given by \textcolor{pyorange}{WIG} and
+% 					% 	\textcolor{pyred}{LDAICA}.
+% 					\label{fig:eisepu}
+% 				\end{figure}
+% 			\end{block}
+%
+% 			% \begin{block}{Future Works}
+% 			% 	What to do in the future.
+% 			% \end{block}
+%
+% 			\begin{block}{References}
+% 				% \printbibliography
+% 				% \setbeamertemplate{bibliography entry title}{}
+% 				% \setbeamertemplate{bibliography entry location}{}
+% 				% \setbeamertemplate{bibliography entry note}{}
+% 				% \bibliographystyle{abbrv}
+% 				% \bibliography{poster}
+% 				\begin{thebibliography}{1}
+%
+% 					% \bibitem{appadurai1990}
+% 					% A.~Appadurai.
+% 					% \newblock Disjuncture and {{Difference}} in the {{Global Cultural Economy}}.
+% 					% \newblock {\em Public Culture}, 2(2):1--24, 1990.
+%
+% 					\bibitem{azqueta-gavaldon2017}
+% 					A.~{Azqueta-Gavald{\'o}n}.
+% 					\newblock Developing news-based {{Economic Policy Uncertainty}} index with
+% 					unsupervised machine learning.
+% 					\newblock {\em Econ. Lett.}, 158:47--50, 2017.
+%
+% 					\bibitem{baker2016}
+% 					S.~R. Baker, N.~Bloom, and S.~J. Davis.
+% 					\newblock Measuring {{Economic Policy Uncertainty}}.
+% 					\newblock {\em Q. J. Econ}, 131(4):1593--1636, 2016.
+%
+% 					\bibitem{blei2003}
+% 					D.~M. Blei, A.~Y. Ng, and M.~I. Jordan.
+% 					\newblock Latent {{Dirichlet Allocation}}.
+% 					\newblock {\em JMLR}, 3(Jan):993--1022, 2003.
+%
+% 					\bibitem{cuturi2013}
+% 					M.~Cuturi.
+% 					\newblock Sinkhorn {{Distances}}: {{Lightspeed Computation}} of {{Optimal
+% 									Transport}}.
+% 					\newblock {\em NIPS 26}, pages 2292--2300, 2013.
+%
+% 					% \bibitem{mikolov2013}
+% 					% T.~Mikolov, K.~Chen, G.~Corrado, and J.~Dean.
+% 					% \newblock Efficient {{Estimation}} of {{Word Representations}} in {{Vector
+% 					% 				Space}}.
+% 					% \newblock {\em arXiv}, 2013.
+%
+% 					\bibitem{schmitz2018}
+% 					M.~A. Schmitz, M.~Heitz, N.~Bonneel, F.~M.~N. Mboula, D.~Coeurjolly, M.~Cuturi,
+% 					G.~Peyr{\'e}, and J.-L. Starck.
+% 					\newblock Wasserstein {{Dictionary Learning}}: {{Optimal Transport}}-based
+% 					unsupervised non-linear dictionary learning.
+% 					\newblock {\em SIAM J Imaging Sci.}, 11(1):643--678, 2018.
+%
+% 				\end{thebibliography}
+% 			\end{block}
+% 			\vskip2ex
+% 			\begin{block}{Acknowledgements}
+% 				The author is grateful to Alfred Galichon, Andr\'es Azqueta-Gavaldón,
+% 				Zhuzhu Zhao and three anonymous referees for their help and comments.
+% 				% \vspace{0.5in}
+% 				% \begin{center}
+% 				% 	\includegraphics[width=7in]{nyu_long_color.png}
+% 				% \end{center}
+% 				\begin{flushright}
+% 					\textcolor{nyupurple}{\textbf{Email: \href{fangzhou.xie@nyu.edu}{fangzhou.xie@nyu.edu}}}
+% 				\end{flushright}
+% 				% \vspace{0.5in}
+% 			\end{block}
+% 		\end{column}
+%
+% 		\begin{column}{\sepwid}\end{column}			% empty spacer column
+%
+% 	\end{columns}
+% \end{frame}
+\end{document}
